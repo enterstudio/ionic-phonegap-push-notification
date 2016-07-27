@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform, $rootScope, $state) {
+.run(function($ionicPlatform, $state) {
     $ionicPlatform.ready(function() {
 
       var push = PushNotification.init({
@@ -33,7 +33,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           console.log('icon appjs');
           window.localStorage['title'] = data.title;
           window.localStorage['image'] = data.image;
-      //    $rootScope.$broadcast('broadcast-icon');
           $state.go('icon');
         }
 
@@ -43,7 +42,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           window.localStorage['image'] = data.image;
           console.log(data.imageNotifImage);
           console.log(data.imageNotifTitle);
-        //  $rootScope.$broadcast('broadcast-image');
           $state.go('image');
         }
 
@@ -51,7 +49,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           console.log('image Icon appjs');
           window.localStorage['title'] = data.title;
           window.localStorage['image'] = data.image;
-      //    $rootScope.$broadcast('broadcast-image-icon');
           $state.go('app');
 
         }
