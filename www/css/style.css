@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+.main-image{
+  text-align: center;
+}
+
+.main-image img{
+  max-width: 50%;
+}
