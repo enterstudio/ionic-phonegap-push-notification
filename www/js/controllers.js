@@ -3,6 +3,8 @@ angular.module('starter.controllers', [])
 .controller('iconNotificationCtrl', function($scope, $state) {
 
   console.log('Hello Icon');
+  $scope.iconTitle = window.localStorage['title'];
+  $scope.iconImage = window.localStorage['image'];
 
 })
 
