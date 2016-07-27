@@ -1,12 +1,12 @@
 # Ionic-phonegap-push-notification
 
-Ionic-phonegap-push-notification app is an example mobile application which showcases three types of push notifications.
+Ionic-phonegap-push-notification app is an example mobile application which showcases three variations of push notifications in android.
 
 This application uses Google's messaging service (gcm) to send push notifications from a demo gcm service to our mobile app.
 
-The three types of notifications are:
+The three variations of notifications are:
 
- * notification with small icon
+ * notification with a small icon
  * notification with a large image and a small icon
  * notification with a large image
 
