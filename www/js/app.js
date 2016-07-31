@@ -26,8 +26,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         console.log(data);
       });
 
+
+
+
+      console.log(window.localStorage);
+
+
       push.on('notification', function(data) {
+        var dataArr = JSON.parse(window.localStorage['data'] || '[]');;
         console.log(data);
+        dataArr.push(data);
+      window.localStorage['data'] = JSON.stringify(dataArr);
 
         if (data.additionalData.type == "icon") {
           console.log('icon appjs');
