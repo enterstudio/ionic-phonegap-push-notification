@@ -30,28 +30,28 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         var dataArr = JSON.parse(window.localStorage['data'] || '[]');;
         console.log(data);
         dataArr.push(data);
-      window.localStorage['data'] = JSON.stringify(dataArr);
+        window.localStorage['data'] = JSON.stringify(dataArr);
 
-        if (data.additionalData.type == "icon") {
-          console.log('icon appjs');
-          // window.localStorage['title'] = data.title;
-          // window.localStorage['image'] = data.image;
-          console.log(dataArr.data.title);
-          $state.go('icon');
-        }
-
-        else if (data.additionalData.type == "image") {
-          console.log('img appjs');
-
-          $state.go('image');
-        }
-
-        else {
-          console.log('image Icon appjs');
-
-          $state.go('app');
-
-        }
+        // if (data.additionalData.type == "icon") {
+        //   console.log('icon appjs');
+        //   // window.localStorage['title'] = data.title;
+        //   // window.localStorage['image'] = data.image;
+        //   console.log(dataArr.data.title);
+        //   $state.go('icon');
+        // }
+        //
+        // else if (data.additionalData.type == "image") {
+        //   console.log('img appjs');
+        //
+        //   $state.go('image');
+        // }
+        //
+        // else {
+        //   console.log('image Icon appjs');
+        //
+        //   $state.go('app');
+        //
+        // }
       });
 
       if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -73,14 +73,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     $stateProvider
 
       .state('app', {
-      url: '/app',
+      url: '/app/:title/:image/:message',
       cache: false,
       templateUrl: 'templates/image-icon-notification.html',
       controller: 'imageIconNotificationCtrl'
     })
 
     .state('image', {
-      url: '/image',
+      url: '/image/:title/:image/:message',
       cache: false,
       templateUrl: 'templates/image-notification.html',
       controller: 'imageNotificationCtrl'
@@ -96,7 +96,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     })
 
     .state('icon', {
-      url: '/icon',
+      url: '/icon/:title/:image/:message',
       cache: false,
       templateUrl: 'templates/icon-notification.html',
       controller: 'iconNotificationCtrl'

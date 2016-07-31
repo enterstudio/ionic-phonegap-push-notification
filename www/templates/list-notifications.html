@@ -1,19 +1,9 @@
-<ion-view view-title="Icon Notification">
+<ion-view view-title="List Notifications">
   <ion-content>
-    <div class="list card">
-
-  <div class="item item-avatar">
-    <img ng-src="{{iconImage}}">
-    <h2>{{iconTitle}}</h2>
-    <p>Patch Update</p>
-  </div>
-
-  <div class="item item-body main-image">
-    <img class="item-image" src="img/rl.png">
-    <p>
-jhgfhjkkjg    </p>
-  </div>
-
-</div>
+    <a ng-repeat="data in data" class="item item-thumbnail-left" ng-click="routeToNotification(data)">
+      <img src="{{data.image}}">
+      <h2>{{data.title}}</h2>
+      <p>{{data.message}}</p>
+    </a>
   </ion-content>
 </ion-view>
