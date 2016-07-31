@@ -25,13 +25,9 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('listNotificationCtrl', function($scope, $state, $rootScope) {
+.controller('listNotificationCtrl', function($scope, $state) {
   console.log('Hello List');
     $scope.data = JSON.parse(window.localStorage['data'] || '[]');
-
-    $rootScope.$on('new notification',function(){
-      $state.go($state.current, {}, {reload: true});
-    })
 
   $scope.routeToNotification = function(data) {
     console.log(data);

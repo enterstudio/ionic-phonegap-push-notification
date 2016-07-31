@@ -31,7 +31,38 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         console.log(data);
         dataArr.push(data);
         window.localStorage['data'] = JSON.stringify(dataArr);
-        $rootScope.$broadcast('new notification');
+
+        if (data.additionalData.type == "icon") {
+  console.log('icon appjs');
+  //console.log(dataArr.data.title);
+  $state.go('icon', {
+    "title": data.title,
+    "image": data.image,
+    "message": data.message
+  });
+}
+
+else if (data.additionalData.type == "image") {
+  console.log('img appjs');
+
+  $state.go('image');
+  $state.go('image', {
+    "title": data.title,
+    "image": data.image,
+    "message": data.message
+  });
+}
+
+else {
+  console.log('image Icon appjs');
+
+  $state.go('app', {
+    "title": data.title,
+    "image": data.image,
+    "message": data.message
+  });
+
+}
       });
 
       if (window.cordova && window.cordova.plugins.Keyboard) {
