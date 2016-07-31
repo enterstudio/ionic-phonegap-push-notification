@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic', 'starter.controllers'])
 
-.run(function($ionicPlatform, $state) {
+.run(function($ionicPlatform, $state,$rootScope) {
     $ionicPlatform.ready(function() {
 
       var push = PushNotification.init({
@@ -31,27 +31,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         console.log(data);
         dataArr.push(data);
         window.localStorage['data'] = JSON.stringify(dataArr);
-
-        // if (data.additionalData.type == "icon") {
-        //   console.log('icon appjs');
-        //   // window.localStorage['title'] = data.title;
-        //   // window.localStorage['image'] = data.image;
-        //   console.log(dataArr.data.title);
-        //   $state.go('icon');
-        // }
-        //
-        // else if (data.additionalData.type == "image") {
-        //   console.log('img appjs');
-        //
-        //   $state.go('image');
-        // }
-        //
-        // else {
-        //   console.log('image Icon appjs');
-        //
-        //   $state.go('app');
-        //
-        // }
+        $rootScope.$broadcast('new notification');
       });
 
       if (window.cordova && window.cordova.plugins.Keyboard) {

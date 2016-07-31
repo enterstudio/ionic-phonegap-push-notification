@@ -25,10 +25,14 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('listNotificationCtrl', function($scope, $state) {
+.controller('listNotificationCtrl', function($scope, $state, $rootScope) {
   console.log('Hello List');
     $scope.data = JSON.parse(window.localStorage['data'] || '[]');
-//  $state.go($state.current, {}, {reload: true});
+
+    $rootScope.$on('new notification',function(){
+      $state.go($state.current, {}, {reload: true});
+    })
+
   $scope.routeToNotification = function(data) {
     console.log(data);
     if (data.additionalData.type == "icon") {
