@@ -26,12 +26,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         console.log(data);
       });
 
-
-
-
-      console.log(window.localStorage);
-
-
       push.on('notification', function(data) {
         var dataArr = JSON.parse(window.localStorage['data'] || '[]');;
         console.log(data);
@@ -40,24 +34,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
         if (data.additionalData.type == "icon") {
           console.log('icon appjs');
-          window.localStorage['title'] = data.title;
-          window.localStorage['image'] = data.image;
+          // window.localStorage['title'] = data.title;
+          // window.localStorage['image'] = data.image;
+          console.log(dataArr.data.title);
           $state.go('icon');
         }
 
         else if (data.additionalData.type == "image") {
           console.log('img appjs');
-          window.localStorage['title'] = data.title;
-          window.localStorage['image'] = data.image;
-          console.log(data.imageNotifImage);
-          console.log(data.imageNotifTitle);
+
           $state.go('image');
         }
 
         else {
           console.log('image Icon appjs');
-          window.localStorage['title'] = data.title;
-          window.localStorage['image'] = data.image;
+
           $state.go('app');
 
         }
@@ -96,6 +87,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
     })
 
+    .state('list', {
+      url: '/list',
+      cache: false,
+      templateUrl: 'templates/list-notifications.html',
+      controller: 'listNotificationCtrl'
+
+    })
+
     .state('icon', {
       url: '/icon',
       cache: false,
@@ -104,5 +103,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app');
+    $urlRouterProvider.otherwise('/list');
   });

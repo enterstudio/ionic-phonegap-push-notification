@@ -14,4 +14,8 @@ angular.module('starter.controllers', [])
 
 .controller('imageIconNotificationCtrl', function($scope, $state) {
   console.log('Hello ImageIcon');
+})
+
+.controller('listNotificationCtrl', function($scope, $state) {
+  console.log('Hello List');
 });
