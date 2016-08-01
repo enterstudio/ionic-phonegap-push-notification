@@ -1,6 +1,6 @@
 angular.module('starter.services',[])
 
-.service('PushNotification', function() {
+.service('PushNotification', function($state) {
   var self = this;
 
   self.initPushNotification = function() {
