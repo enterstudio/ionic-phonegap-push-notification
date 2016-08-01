@@ -3,67 +3,12 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.services'])
 
-.run(function($ionicPlatform, $state,$rootScope) {
+.run(function($ionicPlatform, $state,$rootScope, PushNotification) {
     $ionicPlatform.ready(function() {
 
-      var push = PushNotification.init({
-        android: {
-          senderID: "1044405020884",
-          icon: 'smallicon',
-          iconColor: "#FF4000"
-        },
-        ios: {
-          alert: "true",
-          badge: "true",
-          sound: "true"
-        },
-        windows: {}
-      });
-
-      push.on('registration', function(data) {
-        console.log(data);
-      });
-
-      push.on('notification', function(data) {
-        var dataArr = JSON.parse(window.localStorage['data'] || '[]');;
-        console.log(data);
-        dataArr.push(data);
-        window.localStorage['data'] = JSON.stringify(dataArr);
-
-        if (data.additionalData.type == "icon") {
-  console.log('icon appjs');
-  //console.log(dataArr.data.title);
-  $state.go('icon', {
-    "title": data.title,
-    "image": data.image,
-    "message": data.message
-  });
-}
-
-else if (data.additionalData.type == "image") {
-  console.log('img appjs');
-
-  $state.go('image');
-  $state.go('image', {
-    "title": data.title,
-    "image": data.image,
-    "message": data.message
-  });
-}
-
-else {
-  console.log('image Icon appjs');
-
-  $state.go('app', {
-    "title": data.title,
-    "image": data.image,
-    "message": data.message
-  });
-
-}
-      });
+    PushNotification.initPushNotification();
 
       if (window.cordova && window.cordova.plugins.Keyboard) {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
