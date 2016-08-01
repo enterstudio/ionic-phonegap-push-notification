@@ -1,5 +1,10 @@
 <ion-view view-title="List Notifications">
   <ion-content>
+    <div class="list card" ng-show="data.length==0 || !data">
+      <p class="item item-icon-left">
+        <i class="icon ion-alert"></i> No Notification Received
+      </p>
+    </div>
     <a ng-repeat="data in data" class="item item-thumbnail-left" ng-click="routeToNotification(data)">
       <img src="{{data.image}}">
       <h2>{{data.title}}</h2>

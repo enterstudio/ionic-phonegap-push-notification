@@ -7,6 +7,11 @@ angular.module('starter.controllers', [])
   $scope.image = $stateParams.image;
   $scope.message = $stateParams.message;
 
+  $scope.getBackToList = function(){
+    $state.go('list');
+    console.log('Tapped');
+  }
+
 })
 
 .controller('imageNotificationCtrl', function($scope, $state, $stateParams) {
@@ -15,6 +20,11 @@ angular.module('starter.controllers', [])
   $scope.image = $stateParams.image;
   $scope.message = $stateParams.message;
 
+  $scope.getBackToList = function(){
+    $state.go('list');
+    console.log('Tapped');
+  }
+
 })
 
 .controller('imageIconNotificationCtrl', function($scope, $state, $stateParams) {
@@ -22,6 +32,11 @@ angular.module('starter.controllers', [])
   $scope.title = $stateParams.title;
   $scope.image = $stateParams.image;
   $scope.message = $stateParams.message;
+
+  $scope.getBackToList = function(){
+    $state.go('list');
+    console.log('Tapped');
+  }
 
 })
 

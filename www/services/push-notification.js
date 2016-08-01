@@ -22,7 +22,9 @@ angular.module('starter.services',[])
       console.log(data);
     });
 
-    push.on('notification', self.notificationActions(data));
+    push.on('notification', function(data){
+      self.notificationActions(data);
+    });
   }
 
   self.notificationActions = function(data) {

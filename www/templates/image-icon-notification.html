@@ -2,19 +2,23 @@
   <ion-content>
     <div class="list card">
 
-  <div class="item item-avatar">
-    <img ng-src="{{image}}">
-    <h2>{{title}}</h2>
-    <p>{{message}}</p>
-  </div>
+      <div class="item item-avatar">
+        <img ng-src="{{image}}">
+        <h2>{{title}}</h2>
+        <p>{{message}}</p>
+      </div>
 
-  <div class="item item-body main-image">
-    <img class="item-image" src="img/newskin.png">
-    <p>
-      Image-Icon Push Notification, New Skin for Cars Available in Rocket League.
-    </p>
-  </div>
+      <div class="item item-body main-image">
+        <img class="item-image" src="img/newskin.png">
+        <p>
+          Image-Icon Push Notification, New Skin for Cars Available in Rocket League.
+        </p>
 
-  </div>
+        <button class="button button-block button-dark" ng-click="getBackToList()">
+          List Notification
+        </button>
+      </div>
+
+    </div>
   </ion-content>
 </ion-view>
