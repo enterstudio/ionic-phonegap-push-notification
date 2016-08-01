@@ -11,7 +11,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       var push = PushNotification.init({
         android: {
           senderID: "1044405020884",
-          icon: 'icon',
+          icon: 'smallicon',
           iconColor: "#FF4000"
         },
         ios: {
