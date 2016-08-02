@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['BackToListService'])
 
-.controller('iconNotificationCtrl', function($scope, $state, $stateParams) {
+.controller('iconNotificationCtrl', function($scope, $state, $stateParams, BackToList) {
 
   console.log('Hello Icon');
   $scope.title = $stateParams.title;
@@ -8,8 +8,7 @@ angular.module('starter.controllers', [])
   $scope.message = $stateParams.message;
 
   $scope.getBackToList = function(){
-    $state.go('list');
-    console.log('Tapped');
+    $scope.getBackToList=BackToList.getBackToList();
   }
 
 })
@@ -21,8 +20,7 @@ angular.module('starter.controllers', [])
   $scope.message = $stateParams.message;
 
   $scope.getBackToList = function(){
-    $state.go('list');
-    console.log('Tapped');
+    $scope.getBackToList=BackToList.getBackToList();
   }
 
 })
@@ -34,8 +32,7 @@ angular.module('starter.controllers', [])
   $scope.message = $stateParams.message;
 
   $scope.getBackToList = function(){
-    $state.go('list');
-    console.log('Tapped');
+    $scope.getBackToList=BackToList.getBackToList();
   }
 
 })
