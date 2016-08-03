@@ -6,11 +6,11 @@ This application uses Google's Cloud Messaging (gcm) to send push notifications 
 
 There are three variations of notifications that are showcased here:
 
- [Notification with a large image](./#image)
+ [Notifications with an Image](#notifications-with-an-image)
  
- [Notification with a small icon](./#icon)
+ [Notifications with an Icon](#notifications-with-an-icon)
  
- [Notification with a large image and a small icon](./#imic)
+ [Notifications with an Image and Icon](#notifications-with-an-image-and-icon)
 
 # Installation
 
@@ -66,7 +66,7 @@ above data types and their explanation taken from the [phonegap-plugin-push docu
 
 As mentioned before there are three variations of push notifications , Procedure to achieve those are written below,
 
-## Steps for notifications with an image
+## Notifications with an Image
 
 * In app.js, when initializing push notification remove the icon and icon color field.
 
@@ -86,7 +86,7 @@ As mentioned before there are three variations of push notifications , Procedure
 
 **FIG: Notifications with an Image**
 
-## Steps for notifications with an icon
+## Notifications with an Icon
 
 * In app.js, when initializing push notification add the icon and icon color field.
 
@@ -105,7 +105,7 @@ As mentioned before there are three variations of push notifications , Procedure
 
 **FIG: Notifications with an Icon**
 
-## Steps for notifications with an image and an icon
+## Notifications with an Image and Icon
 
 * In app.js, when initializing push notification add the icon and icon color field.
 
