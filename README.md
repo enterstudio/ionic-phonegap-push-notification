@@ -60,6 +60,68 @@ Data types:
  
 above data types and their explanation taken from the [phonegap-plugin-push documentation](https://github.com/phonegap/phonegap-plugin-push/blob/master/docs/API.md)
 
+# Types of Notifications
+
+As mentioned before there are three variations of push notifications , Procedure to achieve those are written below,
+
+## Steps for notifications with an image
+
+* In app.js, when initializing push notification remove the icon and icon color field.
+
+ var push = PushNotification.init({
+          android: {
+                            senderID: "XXXXXXXXXXX",
+                            icon: 'icon',
+                            iconColor: "#FF4000"
+                        }
+        });
+  
+
+* In the GCM alert page, send the image with the image field along with title and message.
+
+
+![Notifications with an Image](/../screenshots/1.png?raw=true "Notifications with an Image")
+
+**FIG: Notifications with an Image**
+
+## Steps for notifications with an icon
+
+* In app.js, when initializing push notification add the icon and icon color field.
+
+            var push = PushNotification.init({
+          android: {
+                            senderID: "XXXXXXXXXXX",
+                            icon: 'icon',
+                            iconColor: "#FF4000"
+                        }
+        });
+
+* In the GCM alert page, do not send any image with the image field, just pass along the title and message.
+
+
+![Notifications with an Icon](/../screenshots/2.png?raw=true "Notifications with an Icon")
+
+**FIG: Notifications with an Icon**
+
+## Steps for notifications with an image and an icon
+
+* In app.js, when initializing push notification add the icon and icon color field.
+
+            var push = PushNotification.init({
+          android: {
+                            senderID: "XXXXXXXXXXX",
+                            icon: 'icon',
+                            iconColor: "#FF4000"
+                        }
+        });
+
+* In the GCM alert page, send image with the image field along with the title and message.
+
+
+![Notifications with an Image and Icon](/../screenshots/3.png?raw=true "Notifications with an Image and Icon")
+
+**FIG: Notifications with an Image and Icon**
+
 # More Information
 
 For more details, give this a read [ionic-phonegap-push-notification]()
