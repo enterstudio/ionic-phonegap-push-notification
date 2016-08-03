@@ -6,9 +6,11 @@ This application uses Google's Cloud Messaging (gcm) to send push notifications 
 
 There are three variations of notifications that are showcased here:
 
- * notification with a small icon
- * notification with a large image and a small icon
- * notification with a large image
+ [Notification with a large image](./#image)
+ 
+ [Notification with a small icon](./#icon)
+ 
+ [Notification with a large image and a small icon](./#imic)
 
 # Installation
 
@@ -30,7 +32,7 @@ There are three variations of notifications that are showcased here:
 
  * ionic run android
  
-# Setting up an new project
+# Setting up a new project
 
  * Head over to [Google Developer Console](https://console.developers.google.com) and create a new project.
  * Find the project number, select the project and click the menu item and then click 'Project Information' to display the   project number.
